@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be hidden.
+  </div>
+  <script>
+    // Incorrectly hiding an element using display: none in the style attribute
+    document.getElementById("myDiv").style.display = "none";
+    //The error is caused by trying to access an element's style property before the element has been fully parsed into the DOM.
+    //The correct approach is to use the addEventListener to ensure that the script runs after the DOMContentLoaded event.
+  </script>
+</body>
+</html>
